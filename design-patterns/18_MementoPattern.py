@@ -33,6 +33,8 @@ if __name__ == '__main__':
     for i in range(repeat):
         d.save()
         d.numbers.append(i)    
+        print(d.numbers)
+
     d.save()
     
     for _ in range(repeat):

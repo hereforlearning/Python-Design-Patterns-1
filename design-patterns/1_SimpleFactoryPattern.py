@@ -43,7 +43,8 @@ class AnimalFarmFactory(object):
         elif name == 'Pig':
             return Pig()
         else:
-            assert 0, 'Could not find animal "%s"' %name
+            print('Could not find animal "%s"' %name)
+            # assert 0, 'Could not find animal "%s"' %name
 
 ## Client Code
 
@@ -63,5 +64,5 @@ if __name__ == '__main__':
     animal.voice()
     
     # What about animal "Goat"?
-    animal = f.getAnimal('Goat')
-    animal.voice()
+    # animal = f.getAnimal('Goat')
+    # animal.voice()

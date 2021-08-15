@@ -19,7 +19,8 @@ class Plane(object):
         self.__wheels = list()
         self.__engine = None
         self.__body = None
-    
+        self.__Windowstype = None
+
     def attachWing(self, wing):
         self.__wings.append(wing)
     
@@ -31,12 +32,17 @@ class Plane(object):
     
     def setBody(self, body):
         self.__body = body
+
+    def setWindows(self, wintype):
+        self.__Windowstype = wintype
     
     def specification(self):
         print('body: %s' %self.__body.shape)
         print('engine hoorsepower: %d' %self.__engine.horsepower)
         print('wing length: %d ft.' %self.__wings[0].length)
         print('tire size: %d in.' %self.__wheels[0].size)
+        print('tire size: %d is.' %self.__Windowstype.Windowstype)
+        # print(str(self.__Windowstype))
 
 # Product parts
 class Wing(object):
@@ -50,6 +56,10 @@ class Engine(object):
 
 class Body(object):
     shape = None
+
+class Windowsclass(object):
+    Windowstype = None
+
 
 # Director
 class Director(object):
@@ -79,7 +89,10 @@ class Director(object):
             wheel = self.__builder.getWheel()
             plane.attachWheel(wheel)
             j += 1
-                
+
+        windowstype = self.__builder.getWindows()
+        plane.setWindows(windowstype)
+
         return plane
 
 # Builder Interface
@@ -110,6 +123,12 @@ class b747Builder(PlaneBuilderInterface):
         wheel.size = 49
         return wheel
 
+    def getWindows(self):
+        win = Windowsclass()
+        win.Windowstype = 15
+        return win
+
+
 class b787Builder(PlaneBuilderInterface):
     def getBody(self):
         body = Body()
@@ -130,6 +149,11 @@ class b787Builder(PlaneBuilderInterface):
         wheel = Wheel()
         wheel.size = 50
         return wheel
+
+    def getWindows(self):
+        win = Windowsclass()
+        win.Windowstype = 12
+        return win
 
 if __name__ == '__main__':
     

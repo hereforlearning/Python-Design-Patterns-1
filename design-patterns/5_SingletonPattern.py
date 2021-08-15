@@ -18,3 +18,6 @@ if __name__ == '__main__':
     print('What about x.val now? -> %s' %x.val)
     
     print('If x and y are the same object? -> %s' %(x == y))
+
+    z= Singleton()
+    print('z.val = %s' %z.val)

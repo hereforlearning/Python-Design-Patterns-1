@@ -7,9 +7,10 @@ class Car(object):
     
     def is_fine(self):
         if self.water >= 20 and self.fuel >= 5 and self.oil >= 10:
-            print('Car is goot to go')
+            print('Car is good to go')
             return True
         else:
+            print("Car not ready to go")
             return False
 
 class Handler(object):
